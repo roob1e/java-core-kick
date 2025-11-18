@@ -1,6 +1,6 @@
 package com.roobie.collection.exception;
 
-import com.roobie.collection.reader.impl.ReaderImpl;
+import com.roobie.collection.reader.impl.CollectionReaderImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,17 +10,9 @@ import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ReaderExceptionTest {
+class CollectionReaderExceptionTest {
   Path invalid_path = Paths.get("");
-  ReaderImpl reader = new ReaderImpl();
-
-  @BeforeEach
-  void setUp() {
-  }
-
-  @AfterEach
-  void tearDown() {
-  }
+  CollectionReaderImpl reader = new CollectionReaderImpl();
 
   @Test
   void parseAllLinesException() {

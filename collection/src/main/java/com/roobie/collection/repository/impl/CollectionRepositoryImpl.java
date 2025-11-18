@@ -2,12 +2,14 @@ package com.roobie.collection.repository.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.observer.Observer;
-import com.roobie.collection.repository.IntegerCollectionRepository;
+import com.roobie.collection.observer.impl.RepositoryObserver;
+import com.roobie.collection.repository.CollectionRepository;
 import com.roobie.collection.specification.impl.AverageSpecification;
 import com.roobie.collection.specification.impl.CollectionSpecification;
 import com.roobie.collection.specification.impl.IdSpecification;
+import com.roobie.collection.util.Actions;
 import com.roobie.collection.util.MoreLess;
+import com.roobie.collection.warehouse.Warehouse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,24 +17,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class IntegerCollectionRepositoryImpl implements IntegerCollectionRepository {
+public class CollectionRepositoryImpl implements CollectionRepository {
   private static final Logger logger = LogManager.getLogger();
-  private static List<Observer> observers = new ArrayList<>();
-  private static IntegerCollectionRepositoryImpl instance;
-  private List<IntegerCollection> storage;
+  private static RepositoryObserver observer;
+  private static CollectionRepositoryImpl instance;
+  private final List<IntegerCollection> storage;
 
-  public static IntegerCollectionRepositoryImpl getInstance() {
+  public static CollectionRepositoryImpl getInstance() {
     if (instance == null) {
-      instance = new IntegerCollectionRepositoryImpl();
+      instance = new CollectionRepositoryImpl();
       logger.info("Initialized repository");
     } else {
-      logger.info("Repository already exists");
+      logger.info("Returning an existing instance of CollectionRepositoryImpl");
     }
     return instance;
   }
 
-  private IntegerCollectionRepositoryImpl() {
+  private CollectionRepositoryImpl() {
     storage = new ArrayList<IntegerCollection>();
+    observer = new RepositoryObserver(Warehouse.getInstance());
+    logger.info("Initialized observer");
   }
 
   @Override
@@ -90,20 +94,23 @@ public class IntegerCollectionRepositoryImpl implements IntegerCollectionReposit
   }
 
   @Override
-  public IntegerCollection add(IntegerCollection collection) {
+  public IntegerCollection add(IntegerCollection collection) throws IntegerCollectionException {
     logger.info("Adding collection: {}", collection.toString());
     storage.add(collection);
+    notify(Actions.CREATE, collection);
     return collection;
   }
 
   @Override
-  public boolean remove(int id) {
+  public boolean remove(long id) throws IntegerCollectionException {
     logger.info("Removing collection: {}", id);
     IdSpecification specification = new IdSpecification(id);
     for (IntegerCollection collection : storage) {
       if (specification.specify(collection)) {
         logger.info("Collection removed: {}", collection);
         storage.remove(collection);
+
+        notify(Actions.DELETE, collection);
         return true;
       }
     }
@@ -115,5 +122,10 @@ public class IntegerCollectionRepositoryImpl implements IntegerCollectionReposit
   public List<IntegerCollection> fetchAll() {
     logger.info("Fetching all collections");
     return storage;
+  }
+
+  private void notify(Actions action, IntegerCollection collection) throws IntegerCollectionException {
+    logger.info("Notifying action: {}", action);
+    observer.update(action, collection);
   }
 }

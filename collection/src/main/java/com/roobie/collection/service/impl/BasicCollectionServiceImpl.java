@@ -7,7 +7,7 @@ import com.roobie.collection.service.IntegerCollectionService;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class IntegerCollectionImpl implements IntegerCollectionService {
+public class BasicCollectionServiceImpl implements IntegerCollectionService {
   @Override
   public int findMinElement(IntegerCollection collection) throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new int[0])) {

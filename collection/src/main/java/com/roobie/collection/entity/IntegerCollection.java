@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
-// TODO: Observer/Warehouse, Repository, Parser, Sorts;
 public class IntegerCollection {
   private final static Logger logger = LogManager.getLogger();
 
@@ -44,7 +43,7 @@ public class IntegerCollection {
 
   @Override
   public String toString() {
-    StringBuilder builder = new StringBuilder();
+    @SuppressWarnings("StringBufferReplaceableByString") StringBuilder builder = new StringBuilder();
     builder.append("IntegerCollection [collectionId=");
     builder.append(collectionId);
     builder.append(", collection=");

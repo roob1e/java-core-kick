@@ -2,29 +2,25 @@ package com.roobie.collection.repository.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.specification.impl.AverageSpecification;
 import com.roobie.collection.specification.impl.CollectionSpecification;
 import com.roobie.collection.specification.impl.IdSpecification;
 import com.roobie.collection.util.MoreLess;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IntegerCollectionRepositoryImplTest {
-  static IntegerCollectionRepositoryImpl repository = IntegerCollectionRepositoryImpl.getInstance();
+class CollectionRepositoryImplTest {
+  static CollectionRepositoryImpl repository = CollectionRepositoryImpl.getInstance();
   IdSpecification idSpecification;
   CollectionSpecification collectionSpecification;
   IntegerCollection collection;
 
   @BeforeAll
-  static void setUp() {
+  static void setUp() throws IntegerCollectionException {
     IntegerCollection collection1 = new IntegerCollection(new int[]{1, 2, 3});
     IntegerCollection collection2 = new IntegerCollection(new int[]{4, 5, 6});
     IntegerCollection collection3 = new IntegerCollection(new int[]{7, 8, 9});
@@ -77,7 +73,7 @@ class IntegerCollectionRepositoryImplTest {
   }
 
   @Test
-  void add() {
+  void add() throws IntegerCollectionException {
     int[] expected = new int[]{1, 2, 3};
 
     IntegerCollection collection = new IntegerCollection(new int[]{1, 2, 3});
@@ -88,7 +84,7 @@ class IntegerCollectionRepositoryImplTest {
   }
 
   @Test
-  void remove() {
+  void remove() throws IntegerCollectionException {
     collection = new IntegerCollection(new int[]{1, 2, 3});
     repository.add(collection);
     boolean expected = true;

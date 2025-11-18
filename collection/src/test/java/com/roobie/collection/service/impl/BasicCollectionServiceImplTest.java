@@ -9,9 +9,9 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IntegerCollectionImplTest {
+class BasicCollectionServiceImplTest {
   IntegerCollection collection;
-  IntegerCollectionImpl impl = new IntegerCollectionImpl();
+  BasicCollectionServiceImpl impl = new BasicCollectionServiceImpl();
 
   @BeforeEach
   void setUp() {

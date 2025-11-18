@@ -2,15 +2,16 @@ package com.roobie.collection.warehouse;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl;
-import com.roobie.collection.service.impl.IntegerCollectionImpl;
-import com.roobie.collection.specification.impl.IdSpecification;
+import com.roobie.collection.service.impl.BasicCollectionServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 
 public class Warehouse {
+  private static final Logger logger = LogManager.getLogger();
   private static Warehouse instance;
-  private HashMap<Integer, HashMap<String, Double>> storage;
+  private final HashMap<Long, HashMap<String, Double>> storage;
 
   private Warehouse() {
     storage = new HashMap<>();
@@ -18,50 +19,58 @@ public class Warehouse {
 
   public static Warehouse getInstance() {
     if (instance == null) {
+      logger.info("Creating new instance of Warehouse");
       instance = new Warehouse();
     }
     return instance;
   }
 
-  public HashMap<Integer, HashMap<String, Double>> getStorage() {
+  public HashMap<Long, HashMap<String, Double>> getStorage() {
+    logger.info("Getting storage of Warehouse");
     return storage;
   }
 
-  public HashMap<String, Double> getRecord(int collectionId) throws IntegerCollectionException {
-    return storage.get(collectionId);
+  public HashMap<String, Double> getRecord(long collectionId) {
+    if (storage.containsKey(collectionId)) {
+      logger.info("Got record of Warehouse: {}", storage.get(collectionId));
+      return storage.get(collectionId);
+    }
+    return new HashMap<>();
   }
 
-  public HashMap<Integer, HashMap<String, Double>> registerRecord(int collectionId)
+  public void registerRecord(IntegerCollection collection)
           throws IntegerCollectionException {
-    IntegerCollectionRepositoryImpl repository = IntegerCollectionRepositoryImpl.getInstance();
-    IdSpecification specification = new IdSpecification(collectionId);
-    IntegerCollection collection = repository.queryById(specification).get();
-    HashMap<String, Double> record = new HashMap<>();
+    long collectionId = collection.getCollectionId();
+    HashMap<String, Double> metrics = calculateMetrics(collection);
+    storage.put(collectionId, metrics);
 
-    IntegerCollectionImpl service = new IntegerCollectionImpl();
-
-    double average = service.defineAverageValue(collection);
-    record.put("average", average);
-
-    double min = service.findMinElement(collection);
-    record.put("min", min);
-
-    double max = service.findMaxElement(collection);
-    record.put("max", max);
-
-    double length = collection.getCollection().length;
-    record.put("length", length);
-
-    storage.put(collectionId, record);
-
-    HashMap<Integer, HashMap<String, Double>> result = new HashMap<>();
-    result.put(collectionId, record);
-    return result;
+    HashMap<Long, HashMap<String, Double>> result = new HashMap<>();
+    result.put(collectionId, metrics);
+    logger.info("Registered record of Warehouse: {}", result);
   }
 
-  public void removeRecord(int collectionId) throws IntegerCollectionException {
+  public void removeRecord(IntegerCollection collection) {
+    long collectionId = collection.getCollectionId();
+    logger.info("Removing record of Warehouse with id: {}", collectionId);
     storage.remove(collectionId);
   }
 
+  public void updateRecord(IntegerCollection collection) throws IntegerCollectionException {
+    long collectionId = collection.getCollectionId();
+    HashMap<String, Double> metrics = calculateMetrics(collection);
+    storage.put(collectionId, metrics);
+    logger.info("Updated record of Warehouse with id: {}", collectionId);
+  }
 
+  private HashMap<String, Double> calculateMetrics(IntegerCollection collection)
+          throws IntegerCollectionException {
+    HashMap<String, Double> result = new HashMap<>();
+    BasicCollectionServiceImpl service = new BasicCollectionServiceImpl();
+
+    result.put("average", service.defineAverageValue(collection));
+    result.put("min", (double) service.findMinElement(collection));
+    result.put("max", (double) service.findMaxElement(collection));
+    result.put("length", (double) collection.getCollection().length);
+    return result;
+  }
 }

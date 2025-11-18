@@ -2,7 +2,7 @@ package com.roobie.collection.exception;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.factory.IntegerCollectionFactory;
-import com.roobie.collection.service.impl.IntegerCollectionImpl;
+import com.roobie.collection.service.impl.BasicCollectionServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IntegerCollectionExceptionTest {
   IntegerCollection collection;
-  IntegerCollectionImpl impl = new IntegerCollectionImpl();
+  BasicCollectionServiceImpl impl = new BasicCollectionServiceImpl();
 
   @BeforeEach
   void setUp() {

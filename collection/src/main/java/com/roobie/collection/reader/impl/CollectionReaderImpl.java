@@ -3,7 +3,7 @@ package com.roobie.collection.reader.impl;
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.ReaderException;
 import com.roobie.collection.factory.IntegerCollectionFactory;
-import com.roobie.collection.reader.Reader;
+import com.roobie.collection.reader.CollectionReader;
 import com.roobie.collection.validation.StringValidator;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +14,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReaderImpl implements Reader {
+public class CollectionReaderImpl implements CollectionReader {
   private static final Logger logger = LogManager.getLogger();
   private static final String delimiters = "[, \\-\\s]+";
 
@@ -48,7 +48,7 @@ public class ReaderImpl implements Reader {
   @Override
   public IntegerCollection parseLine(Path filePath, int index) throws ReaderException {
     List<IntegerCollection> data = parseAllLines(filePath);
-    IntegerCollection result = IntegerCollectionFactory.createEmpty();
+    IntegerCollection result;
     try {
       result = data.get(index);
       logger.info("Collection read: {}", result);

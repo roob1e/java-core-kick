@@ -4,13 +4,13 @@ import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.specification.Specification;
 
 public class IdSpecification implements Specification {
-  private final int id;
+  private final long id;
 
-  public IdSpecification(int id) {
+  public IdSpecification(long id) {
     this.id = id;
   }
 
-  public int getId() {
+  public long getId() {
     return this.id;
   }
 

@@ -2,14 +2,14 @@ package com.roobie.collection.specification.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.service.impl.IntegerCollectionImpl;
+import com.roobie.collection.service.impl.BasicCollectionServiceImpl;
 import com.roobie.collection.specification.Specification;
 import com.roobie.collection.util.MoreLess;
 
 public class AverageSpecification implements Specification {
   private final double average;
   private final MoreLess sign;
-  private final IntegerCollectionImpl service = new IntegerCollectionImpl();
+  private final BasicCollectionServiceImpl service = new BasicCollectionServiceImpl();
 
   public AverageSpecification(double average, MoreLess sign) {
     this.average = average;

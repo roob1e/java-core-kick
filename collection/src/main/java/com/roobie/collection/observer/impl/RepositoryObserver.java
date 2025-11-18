@@ -1,18 +1,24 @@
 package com.roobie.collection.observer.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
+import com.roobie.collection.exception.IntegerCollectionException;
+import com.roobie.collection.observer.Observer;
+import com.roobie.collection.util.Actions;
 import com.roobie.collection.warehouse.Warehouse;
 
-import java.util.Observable;
-
-public class RepositoryObserver {
+public class RepositoryObserver implements Observer {
   private final Warehouse warehouse;
 
-  public RepositoryObserver() {
-    this.warehouse = Warehouse.getInstance();
+  public RepositoryObserver(Warehouse warehouse) {
+    this.warehouse = warehouse;
   }
 
-  public void update(Observable object, IntegerCollection collection) {
-
+  @Override
+  public void update(Actions action, IntegerCollection collection) throws IntegerCollectionException {
+    switch (action) {
+      case CREATE -> warehouse.registerRecord(collection);
+      case DELETE -> warehouse.removeRecord(collection);
+      case UPDATE -> warehouse.updateRecord(collection);
+    }
   }
 }
