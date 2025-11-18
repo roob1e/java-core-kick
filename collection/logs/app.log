@@ -1,0 +1,223 @@
+2025-11-17 10:05:33.587 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:05:33.595 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:05:33.595 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:05:33.595 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=3, collection=[1, 2, 3, 4]]
+2025-11-17 10:05:33.595 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:05:33.595 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:05:33.596 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:05:33.596 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[4, 3, 2, 1]]
+2025-11-17 10:05:33.596 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:05:33.596 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:05:33.596 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:05:33.596 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=9, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:07:00.541 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:07:00.543 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:07:00.543 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 5 elements
+2025-11-17 10:07:00.545 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:07:00.545 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:07:00.545 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:07:00.546 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[1, 2, 3, 4]]
+2025-11-17 10:07:00.546 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:07:00.546 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:07:00.546 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:07:00.546 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=9, collection=[4, 3, 2, 1]]
+2025-11-17 10:07:00.547 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:07:00.547 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:07:00.547 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:07:00.547 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=12, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:08:05.815 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:08:05.817 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:08:05.817 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 5 elements
+2025-11-17 10:08:05.819 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:08:05.819 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:08:05.820 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:08:05.820 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[1, 2, 3, 4]]
+2025-11-17 10:08:05.820 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:08:05.820 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:08:05.820 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:08:05.820 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=9, collection=[4, 3, 2, 1]]
+2025-11-17 10:08:05.821 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:08:05.821 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:08:05.821 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:08:05.821 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=12, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:08:52.786 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:08:52.788 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:08:52.788 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 5 elements
+2025-11-17 10:08:52.790 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[1, 2, 3, 4]]
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:08:52.791 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=9, collection=[4, 3, 2, 1]]
+2025-11-17 10:08:52.792 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:08:52.792 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:08:52.792 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:08:52.792 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=12, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:09:18.020 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:09:18.024 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:09:18.024 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 5 elements
+2025-11-17 10:09:18.026 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:09:18.026 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:09:18.026 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:09:18.027 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[1, 2, 3, 4]]
+2025-11-17 10:09:18.027 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:09:18.027 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:09:18.027 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:09:18.027 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=9, collection=[4, 3, 2, 1]]
+2025-11-17 10:09:18.028 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:09:18.028 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:09:18.028 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:09:18.028 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=12, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:21:37.657 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.674 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:21:37.675 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:21:37.675 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=2, collection=[1, 2, 3, 4]]
+2025-11-17 10:21:37.675 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.675 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:21:37.676 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:21:37.676 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=4, collection=[4, 3, 2, 1]]
+2025-11-17 10:21:37.676 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.676 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:21:37.676 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:21:37.676 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:21:37.677 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.686 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:21:37.687 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:21:37.687 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 5 elements
+2025-11-17 10:21:37.687 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.687 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:21:37.688 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:21:37.688 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=12, collection=[1, 2, 3, 4]]
+2025-11-17 10:21:37.688 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.688 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:21:37.689 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:21:37.689 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=14, collection=[4, 3, 2, 1]]
+2025-11-17 10:21:37.689 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:21:37.689 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:21:37.689 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:21:37.689 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=16, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:23:33.738 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.751 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:23:33.751 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:23:33.751 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=2, collection=[1, 2, 3, 4]]
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=4, collection=[4, 3, 2, 1]]
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:23:33.752 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=6, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:23:33.753 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.753 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=2, collection=[1, 2, 3, 4]]
+2025-11-17 10:23:33.762 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:23:33.762 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 4 elements
+2025-11-17 10:23:33.762 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 5 elements
+2025-11-17 10:23:33.763 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.763 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
+2025-11-17 10:23:33.763 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:23:33.763 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=12, collection=[1, 2, 3, 4]]
+2025-11-17 10:23:33.763 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [4, 3, 2, 1]
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=14, collection=[4, 3, 2, 1]]
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
+2025-11-17 10:23:33.764 [main] INFO  com.roobie.collection.reader.impl.ReaderImpl - Collection read: IntegerCollection [collectionId=16, collection=[8, 1, 4, 6, 8]]
+2025-11-17 10:27:18.530 [main] ERROR com.roobie.collection.reader.impl.ReaderImpl - 
+2025-11-17 10:28:10.047 [main] ERROR com.roobie.collection.reader.impl.ReaderImpl - 
+2025-11-17 10:28:10.055 [main] ERROR com.roobie.collection.reader.impl.ReaderImpl - 
+2025-11-18 11:33:43.042 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:34:13.348 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:34:13.374 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:35:37.164 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:35:37.173 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:36:00.516 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:36:00.527 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
+2025-11-18 11:39:56.542 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 11:39:56.552 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 0 elements
+2025-11-18 13:54:44.848 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Initialized repository
+2025-11-18 13:54:44.897 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:54:44.897 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:54:44.897 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:54:44.897 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:54:44.898 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:54:44.898 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
+2025-11-18 13:54:44.898 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
+2025-11-18 13:54:44.898 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[10, 11, 12]]
+2025-11-18 13:54:44.915 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by id: 1
+2025-11-18 13:54:44.915 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:54:44.924 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Removing collection: 5
+2025-11-18 13:54:44.925 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Collection not found
+2025-11-18 13:54:44.955 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by collection: [1, 2, 3]
+2025-11-18 13:54:44.956 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:54:44.956 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found 1 collections
+2025-11-18 13:54:44.958 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:54:44.958 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:55:51.521 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Initialized repository
+2025-11-18 13:55:51.550 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:55:51.550 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:55:51.551 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:55:51.551 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:55:51.551 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:55:51.551 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
+2025-11-18 13:55:51.551 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
+2025-11-18 13:55:51.551 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[10, 11, 12]]
+2025-11-18 13:55:51.567 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by id: 1
+2025-11-18 13:55:51.567 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:55:51.576 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:55:51.577 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:55:51.577 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Removing collection: 5
+2025-11-18 13:55:51.577 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Collection removed: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:55:51.582 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by collection: [1, 2, 3]
+2025-11-18 13:55:51.582 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:55:51.582 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found 1 collections
+2025-11-18 13:55:51.584 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:55:51.585 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
+2025-11-18 13:56:20.909 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Initialized repository
+2025-11-18 13:56:20.947 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:56:20.947 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:56:20.947 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:56:20.948 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:56:20.948 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:56:20.948 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
+2025-11-18 13:56:20.948 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
+2025-11-18 13:56:20.948 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[10, 11, 12]]
+2025-11-18 13:56:20.967 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by id: 1
+2025-11-18 13:56:20.968 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:56:20.979 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:56:20.979 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:56:20.980 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Removing collection: 5
+2025-11-18 13:56:20.980 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Collection removed: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:56:20.985 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by collection: [1, 2, 3]
+2025-11-18 13:56:20.985 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:56:20.985 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found 1 collections
+2025-11-18 13:56:20.988 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:56:20.989 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
+2025-11-18 13:59:46.045 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Initialized repository
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
+2025-11-18 13:59:46.084 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[10, 11, 12]]
+2025-11-18 13:59:46.100 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by id: 1
+2025-11-18 13:59:46.100 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:59:46.113 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:59:46.113 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:59:46.113 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Removing collection: 5
+2025-11-18 13:59:46.114 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Collection removed: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
+2025-11-18 13:59:46.120 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying by collection: [1, 2, 3]
+2025-11-18 13:59:46.120 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:59:46.120 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found 1 collections
+2025-11-18 13:59:46.123 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
+2025-11-18 13:59:46.123 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
+2025-11-18 13:59:46.159 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Querying collection with average value LESS than 4.0
+2025-11-18 13:59:46.161 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
+2025-11-18 13:59:46.161 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
+2025-11-18 13:59:46.161 [main] INFO  com.roobie.collection.repository.impl.IntegerCollectionRepositoryImpl - Found 2 collections

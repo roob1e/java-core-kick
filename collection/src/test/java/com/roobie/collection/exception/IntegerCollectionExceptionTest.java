@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NullCollectionExceptionTest {
+class IntegerCollectionExceptionTest {
   IntegerCollection collection;
   IntegerCollectionImpl impl = new IntegerCollectionImpl();
 
@@ -25,7 +25,7 @@ class NullCollectionExceptionTest {
 
   @Test
   void findMinElement() {
-    Exception exception = assertThrows(NullCollectionException.class, () -> {
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
       impl.findMinElement(collection);
     });
     assertEquals("Collection is null", exception.getMessage());
@@ -33,7 +33,7 @@ class NullCollectionExceptionTest {
 
   @Test
   void findMaxElement() {
-    Exception exception = assertThrows(NullCollectionException.class, () -> {
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
       impl.findMaxElement(collection);
     });
     assertEquals("Collection is null", exception.getMessage());
@@ -41,7 +41,7 @@ class NullCollectionExceptionTest {
 
   @Test
   void defineAverageValue() {
-    Exception exception = assertThrows(NullCollectionException.class, () -> {
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
       impl.defineAverageValue(collection);
     });
     assertEquals("Collection is null", exception.getMessage());
@@ -49,7 +49,7 @@ class NullCollectionExceptionTest {
 
   @Test
   void defineSum() {
-    Exception exception = assertThrows(NullCollectionException.class, () -> {
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
       impl.defineSum(collection);
     });
     assertEquals("Collection is null", exception.getMessage());
@@ -57,7 +57,7 @@ class NullCollectionExceptionTest {
 
   @Test
   void countPositivesAndNegatives() {
-    Exception exception = assertThrows(NullCollectionException.class, () -> {
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
       impl.countPositivesAndNegatives(collection);
     });
     assertEquals("Collection is null", exception.getMessage());

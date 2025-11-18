@@ -1,8 +1,7 @@
 package com.roobie.collection.service.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
-import com.roobie.collection.exception.IndexOutOfRangeException;
-import com.roobie.collection.exception.NullCollectionException;
+import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.service.IntegerCollectionService;
 
 import java.util.Arrays;
@@ -10,24 +9,24 @@ import java.util.HashMap;
 
 public class IntegerCollectionImpl implements IntegerCollectionService {
   @Override
-  public int findMinElement(IntegerCollection collection) throws NullCollectionException {
+  public int findMinElement(IntegerCollection collection) throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new int[0])) {
-      throw new NullCollectionException("Collection is null");
+      throw new IntegerCollectionException("Collection is null");
     }
-
-    int min = collection.getCollection()[0];
-    for (int i = 1; i < collection.getCollection().length; i++) {
-      if (collection.getCollection()[i] < min) {
-        min = collection.getCollection()[i];
+    int[] processed = collection.getCollection();
+    int min = processed[0];
+    for (int i = 1; i < processed.length; i++) {
+      if (processed[i] < min) {
+        min = processed[i];
       }
     }
     return min;
   }
 
   @Override
-  public int findMaxElement(IntegerCollection collection) throws NullCollectionException {
+  public int findMaxElement(IntegerCollection collection) throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new int[0])) {
-      throw new NullCollectionException("Collection is null");
+      throw new IntegerCollectionException("Collection is null");
     }
 
     int max = collection.getCollection()[0];
@@ -40,15 +39,15 @@ public class IntegerCollectionImpl implements IntegerCollectionService {
   }
 
   @Override
-  public int replaceElement(IntegerCollection collection, int newElement, int index) throws IndexOutOfRangeException{
+  public int replaceElement(IntegerCollection collection, int newElement, int index) throws IntegerCollectionException {
     if (index < 0 || index >= collection.getCollection().length) {
-      throw new IndexOutOfRangeException("Index out of range");
+      throw new IntegerCollectionException("Index out of range");
     }
 
-    var coll = collection.getCollection();
-    int[] result = new int[coll.length];
-    for (int i = 0; i < coll.length; i++) {
-      result[i] = coll[i];
+    int[] processed = collection.getCollection();
+    int[] result = new int[processed.length];
+    for (int i = 0; i < processed.length; i++) {
+      result[i] = processed[i];
       if (i == index) {
         result[i] = newElement;
       }
@@ -58,30 +57,30 @@ public class IntegerCollectionImpl implements IntegerCollectionService {
   }
 
   @Override
-  public double defineAverageValue(IntegerCollection collection) throws NullCollectionException {
+  public double defineAverageValue(IntegerCollection collection) throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new int[0])) {
-      throw new NullCollectionException("Collection is null");
+      throw new IntegerCollectionException("Collection is null");
     }
 
-    var coll = collection.getCollection();
+    int[] processed = collection.getCollection();
     double average;
     double sum = 0;
-    for (int element : coll) {
+    for (int element : processed) {
       sum += element;
     }
-    average = sum / coll.length;
+    average = sum / processed.length;
     return average;
   }
 
   @Override
-  public int defineSum(IntegerCollection collection) throws NullCollectionException {
+  public int defineSum(IntegerCollection collection) throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new int[0])) {
-      throw new NullCollectionException("Collection is null");
+      throw new IntegerCollectionException("Collection is null");
     }
 
-    var coll = collection.getCollection();
+    int[] processed = collection.getCollection();
     int sum = 0;
-    for (int element : coll) {
+    for (int element : processed) {
       sum += element;
     }
     return sum;
@@ -89,17 +88,17 @@ public class IntegerCollectionImpl implements IntegerCollectionService {
 
   @Override
   public HashMap<String, Integer> countPositivesAndNegatives(IntegerCollection collection)
-          throws NullCollectionException {
+          throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new int[0])) {
-      throw new NullCollectionException("Collection is null");
+      throw new IntegerCollectionException("Collection is null");
     }
 
-    var coll = collection.getCollection();
+    int[] processed = collection.getCollection();
     HashMap<String, Integer> map = new HashMap<>();
     map.put("positive", 0);
     map.put("negative", 0);
     map.put("zero", 0);
-    for (int element : coll) {
+    for (int element : processed) {
       if (element > 0) {
         map.put("positive", map.get("positive") + 1);
       } else if (element < 0) {

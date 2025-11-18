@@ -15,8 +15,7 @@ class IntegerCollectionImplTest {
 
   @BeforeEach
   void setUp() {
-    collection = new IntegerCollection().builder()
-            .collection(new int[] {1, 2, 3}).build();
+    collection = new IntegerCollection(new int[]{1, 2, 3});
   }
 
   @AfterEach
@@ -25,21 +24,21 @@ class IntegerCollectionImplTest {
   }
 
   @Test
-  void findMinElement() {
+  void findMinElement() throws Exception {
     int expected = 1;
     int actual = impl.findMinElement(collection);
     assertEquals(expected, actual);
   }
 
   @Test
-  void findMaxElement() {
+  void findMaxElement() throws Exception {
     int expected = 3;
     int actual = impl.findMaxElement(collection);
     assertEquals(expected, actual);
   }
 
   @Test
-  void replaceElement() {
+  void replaceElement() throws Exception {
     int newValue = 0;
     int expected = 0;
     int actual = impl.replaceElement(collection, newValue, 2);
@@ -47,26 +46,26 @@ class IntegerCollectionImplTest {
   }
 
   @Test
-  void defineAverageValue() {
+  void defineAverageValue() throws Exception {
     double expected = 2.0;
     double actual = impl.defineAverageValue(collection);
     assertEquals(expected, actual);
   }
 
   @Test
-  void defineSum() {
+  void defineSum() throws Exception {
     int expected = 6;
     int actual = impl.defineSum(collection);
     assertEquals(expected, actual);
   }
 
   @Test
-  void countPositivesAndNegatives() {
+  void countPositivesAndNegatives() throws Exception {
     HashMap<String, Integer> expected = new HashMap<>();
     expected.put("positive", 3);
     expected.put("negative", 0);
     expected.put("zero", 0);
-    var actual = impl.countPositivesAndNegatives(collection);
+    HashMap<String, Integer> actual = impl.countPositivesAndNegatives(collection);
     assertEquals(expected, actual);
   }
 }

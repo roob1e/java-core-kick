@@ -1,0 +1,119 @@
+package com.roobie.collection.repository.impl;
+
+import com.roobie.collection.entity.IntegerCollection;
+import com.roobie.collection.exception.IntegerCollectionException;
+import com.roobie.collection.observer.Observer;
+import com.roobie.collection.repository.IntegerCollectionRepository;
+import com.roobie.collection.specification.impl.AverageSpecification;
+import com.roobie.collection.specification.impl.CollectionSpecification;
+import com.roobie.collection.specification.impl.IdSpecification;
+import com.roobie.collection.util.MoreLess;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+public class IntegerCollectionRepositoryImpl implements IntegerCollectionRepository {
+  private static final Logger logger = LogManager.getLogger();
+  private static List<Observer> observers = new ArrayList<>();
+  private static IntegerCollectionRepositoryImpl instance;
+  private List<IntegerCollection> storage;
+
+  public static IntegerCollectionRepositoryImpl getInstance() {
+    if (instance == null) {
+      instance = new IntegerCollectionRepositoryImpl();
+      logger.info("Initialized repository");
+    } else {
+      logger.info("Repository already exists");
+    }
+    return instance;
+  }
+
+  private IntegerCollectionRepositoryImpl() {
+    storage = new ArrayList<IntegerCollection>();
+  }
+
+  @Override
+  public Optional<IntegerCollection> queryById(IdSpecification specification) {
+    logger.info("Querying by id: {}", specification.getId());
+    for (IntegerCollection collection : storage) {
+      if (specification.specify(collection)) {
+        logger.info("Found collection: {}", collection);
+        return Optional.of(collection);
+      }
+    }
+    logger.info("No collection found");
+    return Optional.empty();
+  }
+
+  @Override
+  public Optional<List<IntegerCollection>> queryByCollection(CollectionSpecification specification) {
+    logger.info("Querying by collection: {}", specification.getCollection());
+    List<IntegerCollection> response = new ArrayList<>();
+    for (IntegerCollection collection : storage) {
+      if (specification.specify(collection)) {
+        logger.info("Found collection: {}", collection);
+        response.add(collection);
+      }
+    }
+    if (!response.isEmpty()) {
+      logger.info("Found {} collections", response.size());
+      return Optional.of(response);
+    } else {
+      logger.info("No collection found");
+      return Optional.empty();
+    }
+  }
+
+  @Override
+  public Optional<List<IntegerCollection>> queryByAverage(MoreLess sign, double value)
+          throws IntegerCollectionException {
+    logger.info("Querying collection with average value {} than {}", sign, value);
+    List<IntegerCollection> response = new ArrayList<>();
+    AverageSpecification specification = new AverageSpecification(value, sign);
+
+    for (IntegerCollection collection : storage) {
+      if (specification.specify(collection)) {
+        logger.info("Found collection: {}", collection);
+        response.add(collection);
+      }
+    }
+    if (!response.isEmpty()) {
+      logger.info("Found {} collections", response.size());
+      return Optional.of(response);
+    } else {
+      logger.info("No collection found");
+      return Optional.empty();
+    }
+  }
+
+  @Override
+  public IntegerCollection add(IntegerCollection collection) {
+    logger.info("Adding collection: {}", collection.toString());
+    storage.add(collection);
+    return collection;
+  }
+
+  @Override
+  public boolean remove(int id) {
+    logger.info("Removing collection: {}", id);
+    IdSpecification specification = new IdSpecification(id);
+    for (IntegerCollection collection : storage) {
+      if (specification.specify(collection)) {
+        logger.info("Collection removed: {}", collection);
+        storage.remove(collection);
+        return true;
+      }
+    }
+    logger.info("Collection not found");
+    return false;
+  }
+
+  @Override
+  public List<IntegerCollection> fetchAll() {
+    logger.info("Fetching all collections");
+    return storage;
+  }
+}
