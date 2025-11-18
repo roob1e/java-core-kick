@@ -1,6 +1,5 @@
 package com.roobie.collection.exception;
 
-import com.roobie.collection.reader.Reader;
 import com.roobie.collection.reader.impl.ReaderImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,14 +23,14 @@ class ReaderExceptionTest {
   }
 
   @Test
-  void parseAllLinesException() throws ReaderException {
+  void parseAllLinesException() {
     assertThrows(ReaderException.class, () -> {
       reader.parseAllLines(invalid_path);
     });
   }
 
   @Test
-  void parseLineException() throws ReaderException {
+  void parseLineException() {
     assertThrows(ReaderException.class, () -> {
       reader.parseLine(invalid_path, 1);
     });
