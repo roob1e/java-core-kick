@@ -1,12 +1,12 @@
 package com.roobie.collection.reader;
 
 import com.roobie.collection.entity.IntegerCollection;
-import com.roobie.collection.exception.ReaderException;
+import com.roobie.collection.exception.IntegerCollectionException;
 
 import java.nio.file.Path;
 import java.util.List;
 
 public interface CollectionReader {
-  List<IntegerCollection> parseAllLines(Path filePath) throws ReaderException;
-  IntegerCollection parseLine(Path filePath, int index) throws ReaderException;
+  List<IntegerCollection> parseAllLines(Path filePath) throws IntegerCollectionException;
+  IntegerCollection parseLine(Path filePath, int index) throws IntegerCollectionException;
 }

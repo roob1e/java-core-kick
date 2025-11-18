@@ -4,30 +4,14 @@ import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.service.impl.BasicCollectionServiceImpl;
 import com.roobie.collection.specification.Specification;
-import com.roobie.collection.util.MoreLess;
+import com.roobie.collection.util.Sign;
 
-public class AverageSpecification implements Specification {
-  private final double average;
-  private final MoreLess sign;
-  private final BasicCollectionServiceImpl service = new BasicCollectionServiceImpl();
-
-  public AverageSpecification(double average, MoreLess sign) {
-    this.average = average;
-    this.sign = sign;
-  }
-
-  public double getAverage() {
-    return average;
-  }
-
-  public MoreLess getSign() {
-    return sign;
-  }
+public record AverageSpecification(double average, Sign sign) implements Specification {
 
   @Override
   public boolean specify(IntegerCollection collection) throws IntegerCollectionException {
-    double average = service.defineAverageValue(collection);
-    if (sign == MoreLess.MORE) {
+    double average = new BasicCollectionServiceImpl().defineAverageValue(collection);
+    if (sign == Sign.MORE) {
       return average > this.average;
     } else {
       return average < this.average;

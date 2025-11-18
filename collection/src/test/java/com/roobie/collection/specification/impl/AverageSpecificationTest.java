@@ -2,7 +2,7 @@ package com.roobie.collection.specification.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.util.MoreLess;
+import com.roobie.collection.util.Sign;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ public class AverageSpecificationTest {
 
   @BeforeEach
   void setUp() {
-    specification = new AverageSpecification(3.1D, MoreLess.LESS);
+    specification = new AverageSpecification(3.1D, Sign.LESS);
   }
 
   @AfterEach

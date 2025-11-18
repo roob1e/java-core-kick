@@ -1,5 +1,6 @@
 package com.roobie.collection.warehouse.impl;
 
+import com.roobie.collection.entity.CollectionStats;
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.service.impl.BasicCollectionServiceImpl;
@@ -12,7 +13,7 @@ import java.util.HashMap;
 public class WarehouseImpl implements Warehouse {
   private static final Logger logger = LogManager.getLogger();
   private static WarehouseImpl instance;
-  private final HashMap<Long, HashMap<String, Double>> storage;
+  private final HashMap<Long, CollectionStats> storage;
 
   private WarehouseImpl() {
     storage = new HashMap<>();
@@ -27,28 +28,27 @@ public class WarehouseImpl implements Warehouse {
   }
 
   @Override
-  public HashMap<Long, HashMap<String, Double>> getStorage() {
+  public HashMap<Long, CollectionStats> getStorage() {
     logger.info("Getting storage of Warehouse");
     return storage;
   }
 
   @Override
-  public HashMap<String, Double> getRecord(long collectionId) {
+  public CollectionStats getStats(long collectionId) {
     if (storage.containsKey(collectionId)) {
       logger.info("Got record of Warehouse: {}", storage.get(collectionId));
       return storage.get(collectionId);
     }
-    return new HashMap<>();
+    return new CollectionStats(0, 0, 0, 0);
   }
 
   @Override
-  public void registerRecord(IntegerCollection collection)
-          throws IntegerCollectionException {
+  public void registerRecord(IntegerCollection collection) {
     long collectionId = collection.getCollectionId();
-    HashMap<String, Double> metrics = calculateMetrics(collection);
+    CollectionStats metrics = calculateMetrics(collection);
     storage.put(collectionId, metrics);
 
-    HashMap<Long, HashMap<String, Double>> result = new HashMap<>();
+    HashMap<Long, CollectionStats> result = new HashMap<>();
     result.put(collectionId, metrics);
     logger.info("Registered record of Warehouse: {}", result);
   }
@@ -61,22 +61,23 @@ public class WarehouseImpl implements Warehouse {
   }
 
   @Override
-  public void updateRecord(IntegerCollection collection) throws IntegerCollectionException {
+  public void updateRecord(IntegerCollection collection) {
     long collectionId = collection.getCollectionId();
-    HashMap<String, Double> metrics = calculateMetrics(collection);
+    CollectionStats metrics = calculateMetrics(collection);
     storage.put(collectionId, metrics);
     logger.info("Updated record of Warehouse with id: {}", collectionId);
   }
 
-  private HashMap<String, Double> calculateMetrics(IntegerCollection collection)
-          throws IntegerCollectionException {
-    HashMap<String, Double> result = new HashMap<>();
-    BasicCollectionServiceImpl service = new BasicCollectionServiceImpl();
-
-    result.put("average", service.defineAverageValue(collection));
-    result.put("min", (double) service.findMinElement(collection));
-    result.put("max", (double) service.findMaxElement(collection));
-    result.put("length", (double) collection.getCollection().length);
-    return result;
+  private CollectionStats calculateMetrics(IntegerCollection collection) {
+    BasicCollectionServiceImpl impl = new BasicCollectionServiceImpl();
+    try {
+      double average = impl.defineAverageValue(collection);
+      int min = impl.findMinElement(collection);
+      int max = impl.findMaxElement(collection);
+      int sum = impl.defineSum(collection);
+      return new CollectionStats(average, min, max, sum);
+    } catch (IntegerCollectionException e) {
+      return new CollectionStats(0, 0, 0, 0);
+    }
   }
 }

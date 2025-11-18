@@ -1,6 +1,6 @@
 package com.roobie.collection.util;
 
-public enum MoreLess {
+public enum Sign {
   MORE,
   LESS,
 }

@@ -1,7 +1,7 @@
 package com.roobie.collection.reader.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
-import com.roobie.collection.exception.ReaderException;
+import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.reader.CollectionReader;
 import com.roobie.collection.validation.StringValidator;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +18,7 @@ public class CollectionReaderImpl implements CollectionReader {
   private static final String delimiters = "[, \\-\\s]+";
 
   @Override
-  public List<IntegerCollection> parseAllLines(Path filePath) throws ReaderException {
+  public List<IntegerCollection> parseAllLines(Path filePath) throws IntegerCollectionException {
     List<IntegerCollection> data = new ArrayList<>();
     try {
       List<String> lines = Files.readAllLines(filePath);
@@ -39,13 +39,13 @@ public class CollectionReaderImpl implements CollectionReader {
       }
     } catch (IOException e) {
       logger.error(e.getMessage());
-      throw new ReaderException(e.getMessage());
+      throw new IntegerCollectionException(e.getMessage(), e);
     }
     return data;
   }
 
   @Override
-  public IntegerCollection parseLine(Path filePath, int index) throws ReaderException {
+  public IntegerCollection parseLine(Path filePath, int index) throws IntegerCollectionException {
     List<IntegerCollection> data = parseAllLines(filePath);
     IntegerCollection result;
     try {
@@ -53,7 +53,7 @@ public class CollectionReaderImpl implements CollectionReader {
       logger.info("Collection read: {}", result);
     } catch (IndexOutOfBoundsException e) {
       logger.error("Index out of bounds: {}\n{}", index, e.getMessage());
-      throw new ReaderException(e.getMessage());
+      throw new IntegerCollectionException(e.getMessage(), e);
     }
     return result;
   }

@@ -2,9 +2,11 @@ package com.roobie.collection.repository.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
+import com.roobie.collection.specification.Specification;
+import com.roobie.collection.specification.impl.AverageSpecification;
 import com.roobie.collection.specification.impl.CollectionSpecification;
 import com.roobie.collection.specification.impl.IdSpecification;
-import com.roobie.collection.util.MoreLess;
+import com.roobie.collection.util.Sign;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +19,7 @@ class CollectionRepositoryImplTest {
   static CollectionRepositoryImpl repository = CollectionRepositoryImpl.getInstance();
   IdSpecification idSpecification;
   CollectionSpecification collectionSpecification;
-  IntegerCollection collection;
+  List<IntegerCollection> collections;
 
   @BeforeAll
   static void setUp() throws IntegerCollectionException {
@@ -32,14 +34,14 @@ class CollectionRepositoryImplTest {
   }
 
   @Test
-  void queryById() {
+  void queryById() throws IntegerCollectionException {
     int[] expected = new int[]{1, 2, 3};
     idSpecification = new IdSpecification(1);
 
-    Optional<IntegerCollection> result = repository.queryById(idSpecification);
+    Optional<List<IntegerCollection>> result = repository.query(idSpecification);
     if (result.isPresent()) {
-      collection = result.get();
-      int[] actual = collection.getCollection();
+      collections = result.get();
+      int[] actual = collections.getFirst().getCollection();
       assertArrayEquals(expected, actual);
     } else {
       fail("Collection not found");
@@ -47,28 +49,29 @@ class CollectionRepositoryImplTest {
   }
 
   @Test
-  void queryByCollection() {
+  void queryByCollection() throws IntegerCollectionException {
     int[] expected = new int[]{1, 2, 3};
     collectionSpecification = new CollectionSpecification(new int[]{1, 2, 3});
 
-    Optional<List<IntegerCollection>> result = repository.queryByCollection(collectionSpecification);
+    Optional<List<IntegerCollection>> result = repository.query(collectionSpecification);
     if (result.isPresent()) {
-      collection = result.get().get(0);
-      int[] actual = collection.getCollection();
+      collections = result.get();
+      int[] actual = collections.getFirst().getCollection();
       assertArrayEquals(expected, actual);
     } else {
       fail("Collection not found");
     }
-
   }
 
   @Test
   void queryByAverage() throws IntegerCollectionException {
     int[] expected = new int[]{1, 2, 3};
 
-    double averageValue = 4.0;
-    List<IntegerCollection> result = repository.queryByAverage(MoreLess.LESS, averageValue).get();
-    int[] actual = result.get(0).getCollection();
+    double averageValue = 3.1;
+    Specification specification = new AverageSpecification(averageValue, Sign.LESS);
+
+    List<IntegerCollection> result = repository.query(specification).get();
+    int[] actual = result.getFirst().getCollection();
     assertArrayEquals(expected, actual);
   }
 
@@ -85,7 +88,7 @@ class CollectionRepositoryImplTest {
 
   @Test
   void remove() throws IntegerCollectionException {
-    collection = new IntegerCollection(new int[]{1, 2, 3});
+    var collection = new IntegerCollection(new int[]{1, 2, 3});
     repository.add(collection);
     boolean expected = true;
     boolean actual = repository.remove(5);

@@ -1,6 +1,6 @@
 package com.roobie.collection.util;
 
-public enum Actions {
+public enum Events {
   CREATE,
   UPDATE,
   DELETE,

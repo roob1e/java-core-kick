@@ -14,7 +14,7 @@ class IntegerCollectionExceptionTest {
   BasicCollectionServiceImpl impl = new BasicCollectionServiceImpl();
 
   @BeforeEach
-  void setUp() {
+  void setUp() throws IntegerCollectionException {
     collection = IntegerCollectionFactory.createEmpty();
   }
 

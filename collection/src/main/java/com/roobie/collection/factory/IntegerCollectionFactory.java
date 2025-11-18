@@ -1,6 +1,7 @@
 package com.roobie.collection.factory;
 
 import com.roobie.collection.entity.IntegerCollection;
+import com.roobie.collection.exception.IntegerCollectionException;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -10,7 +11,7 @@ public class IntegerCollectionFactory {
 
   private IntegerCollectionFactory() {}
 
-  public static IntegerCollection createEmpty() {
+  public static IntegerCollection createEmpty() throws IntegerCollectionException {
     IntegerCollection collection = new IntegerCollection();
     collection.setCollection(new int[0]);
     return collection;

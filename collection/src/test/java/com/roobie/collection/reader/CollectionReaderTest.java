@@ -1,10 +1,8 @@
 package com.roobie.collection.reader;
 
 import com.roobie.collection.entity.IntegerCollection;
-import com.roobie.collection.exception.ReaderException;
+import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.reader.impl.CollectionReaderImpl;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -18,7 +16,7 @@ class CollectionReaderTest {
   Path path = Paths.get("data/data.txt");
 
   @Test
-  void parseAllLines() throws ReaderException {
+  void parseAllLines() throws IntegerCollectionException {
     List<int[]> expected = new ArrayList<>();
     expected.add(new IntegerCollection(new int[]{1, 2, 3, 4}).getCollection());
     expected.add(new IntegerCollection(new int[]{4, 3, 2, 1}).getCollection());
@@ -34,7 +32,7 @@ class CollectionReaderTest {
   }
 
   @Test
-  void parseLine() throws ReaderException {
+  void parseLine() throws IntegerCollectionException {
     int[] expected = new int[]{1, 2, 3, 4};
 
     IntegerCollection parsed = new CollectionReaderImpl().parseLine(path, 0);
