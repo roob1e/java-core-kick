@@ -9,7 +9,7 @@ import com.roobie.collection.specification.impl.CollectionSpecification;
 import com.roobie.collection.specification.impl.IdSpecification;
 import com.roobie.collection.util.Actions;
 import com.roobie.collection.util.MoreLess;
-import com.roobie.collection.warehouse.Warehouse;
+import com.roobie.collection.warehouse.impl.WarehouseImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,7 +35,7 @@ public class CollectionRepositoryImpl implements CollectionRepository {
 
   private CollectionRepositoryImpl() {
     storage = new ArrayList<IntegerCollection>();
-    observer = new RepositoryObserver(Warehouse.getInstance());
+    observer = new RepositoryObserver(WarehouseImpl.getInstance());
     logger.info("Initialized observer");
   }
 

@@ -2,7 +2,7 @@ package com.roobie.collection.repository.impl;
 
 import com.roobie.collection.entity.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.warehouse.Warehouse;
+import com.roobie.collection.warehouse.impl.WarehouseImpl;
 import org.junit.jupiter.api.*;
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RepositoryObserverTest {
   CollectionRepositoryImpl repository = CollectionRepositoryImpl.getInstance();
-  Warehouse warehouse = Warehouse.getInstance();
+  WarehouseImpl warehouseImpl = WarehouseImpl.getInstance();
 
   @Test
   @Order(1)
@@ -29,7 +29,7 @@ class RepositoryObserverTest {
     repository.add(collection1);
     repository.add(collection2);
     repository.add(collection3);
-    Set<Long> actual = warehouse.getStorage().keySet();
+    Set<Long> actual = warehouseImpl.getStorage().keySet();
 
     assertEquals(expected, actual);
   }
@@ -42,7 +42,7 @@ class RepositoryObserverTest {
     expected.add(2L);
 
     repository.remove(3L);
-    Set<Long> actual = warehouse.getStorage().keySet();
+    Set<Long> actual = warehouseImpl.getStorage().keySet();
     assertEquals(expected, actual);
   }
 }

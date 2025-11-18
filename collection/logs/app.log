@@ -221,7 +221,7 @@
 2025-11-18 13:59:46.161 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 13:59:46.161 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
 2025-11-18 13:59:46.161 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found 2 collections
-2025-11-18 18:26:02.046 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:26:02.046 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:26:02.054 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:26:02.054 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:26:02.080 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
@@ -236,21 +236,21 @@
 2025-11-18 18:26:02.099 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
 2025-11-18 18:26:02.099 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Querying by id: 4
 2025-11-18 18:26:02.100 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=4, collection=[1, 2, 3]]
-2025-11-18 18:26:02.101 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {4={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:26:02.101 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {4={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:26:02.101 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[4, 5, 6]]
 2025-11-18 18:26:02.101 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Repository already exists
 2025-11-18 18:26:02.101 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Querying by id: 5
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=5, collection=[4, 5, 6]]
-2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {5={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {5={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[7, 8, 9]]
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Repository already exists
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Querying by id: 6
 2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=6, collection=[7, 8, 9]]
-2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {6={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
-2025-11-18 18:33:03.345 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {6={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:26:02.102 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
+2025-11-18 18:33:03.345 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:33:03.347 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:33:03.347 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:33:03.368 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
@@ -261,13 +261,13 @@
 2025-11-18 18:33:03.385 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:33:03.385 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:33:03.389 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[1, 2, 3]]
-2025-11-18 18:33:03.390 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {4={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:33:03.390 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {4={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[4, 5, 6]]
-2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {5={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {5={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[7, 8, 9]]
-2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {6={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
-2025-11-18 18:34:48.477 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {6={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:33:03.391 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
+2025-11-18 18:34:48.477 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:34:48.480 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:34:48.480 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:34:48.496 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
@@ -278,13 +278,13 @@
 2025-11-18 18:34:48.510 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:34:48.511 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:34:48.515 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[1, 2, 3]]
-2025-11-18 18:34:48.517 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {4={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:34:48.517 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {4={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:34:48.517 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[4, 5, 6]]
-2025-11-18 18:34:48.517 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {5={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:34:48.517 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {5={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:34:48.517 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[7, 8, 9]]
-2025-11-18 18:34:48.518 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {6={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:34:48.518 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
-2025-11-18 18:41:51.562 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:34:48.518 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {6={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:34:48.518 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
+2025-11-18 18:41:51.562 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:41:51.564 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:41:51.564 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:41:51.582 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Returning an existing instance of CollectionRepositoryImpl
@@ -292,13 +292,13 @@
 2025-11-18 18:41:51.606 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:41:51.606 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:41:51.606 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
-2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
-2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
-2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
-2025-11-18 18:47:15.335 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:41:51.609 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
+2025-11-18 18:47:15.335 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:47:15.337 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:47:15.337 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:47:15.349 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Returning an existing instance of CollectionRepositoryImpl
@@ -307,35 +307,35 @@
 2025-11-18 18:47:15.374 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:47:15.374 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 18:47:15.375 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:47:15.376 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:47:15.376 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:47:15.376 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
 2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
-2025-11-18 18:51:01.405 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:47:15.377 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
+2025-11-18 18:51:01.405 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:51:01.407 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:51:01.407 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:51:01.441 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Removing collection: 3
 2025-11-18 18:51:01.442 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Collection not found
-2025-11-18 18:51:01.442 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
+2025-11-18 18:51:01.442 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
 2025-11-18 18:51:01.458 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Returning an existing instance of CollectionRepositoryImpl
 2025-11-18 18:51:01.464 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:51:01.464 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:51:01.464 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:51:01.464 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 18:51:01.465 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:51:01.466 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:51:01.466 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:51:01.466 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
 2025-11-18 18:51:01.466 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
-2025-11-18 18:52:06.000 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:51:01.467 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
+2025-11-18 18:52:06.000 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 18:52:06.002 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 18:52:06.002 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 18:52:06.037 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
@@ -343,20 +343,20 @@
 2025-11-18 18:52:06.037 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 18:52:06.037 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 18:52:06.039 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:52:06.040 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 18:52:06.040 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 18:52:06.040 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
 2025-11-18 18:52:06.040 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
+2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 18:52:06.041 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
 2025-11-18 18:52:06.049 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Returning an existing instance of CollectionRepositoryImpl
 2025-11-18 18:52:06.053 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Removing collection: 3
 2025-11-18 18:52:06.054 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Collection removed: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 18:52:06.054 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: DELETE
-2025-11-18 18:52:06.054 [main] INFO  com.roobie.collection.warehouse.Warehouse - Removing record of Warehouse with id: 3
-2025-11-18 18:52:06.054 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
+2025-11-18 18:52:06.054 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Removing record of Warehouse with id: 3
+2025-11-18 18:52:06.054 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
 2025-11-18 18:59:11.232 [main] INFO  com.roobie.collection.entity.IntegerCollection - Empty IntegerCollection was initialized
 2025-11-18 18:59:11.247 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [1, 2, 3, 4]
 2025-11-18 18:59:11.247 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
@@ -422,7 +422,7 @@
 2025-11-18 19:00:59.840 [main] INFO  com.roobie.collection.entity.IntegerCollection - Collections set to: [8, 1, 4, 6, 8]
 2025-11-18 19:00:59.840 [main] INFO  com.roobie.collection.entity.IntegerCollection - Building IntegerCollection
 2025-11-18 19:00:59.840 [main] INFO  com.roobie.collection.reader.impl.CollectionReaderImpl - Collection read: IntegerCollection [collectionId=15, collection=[8, 1, 4, 6, 8]]
-2025-11-18 19:01:04.061 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 19:01:04.061 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 19:01:04.063 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 19:01:04.063 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 19:01:04.080 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
@@ -431,38 +431,38 @@
 2025-11-18 19:01:04.080 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 19:01:04.080 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 19:01:04.081 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:04.082 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 19:01:04.082 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 19:01:04.082 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
 2025-11-18 19:01:04.082 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:04.082 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 19:01:04.082 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
 2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=4, collection=[10, 11, 12]]
 2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {4={average=11.0, min=10.0, max=12.0, length=3.0}}
+2025-11-18 19:01:04.083 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {4={average=11.0, min=10.0, max=12.0, length=3.0}}
 2025-11-18 19:01:04.095 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Querying by id: 1
 2025-11-18 19:01:04.095 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 19:01:04.102 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 19:01:04.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
 2025-11-18 19:01:04.102 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:04.102 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {5={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 19:01:04.102 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {5={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 19:01:04.103 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Removing collection: 5
 2025-11-18 19:01:04.103 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Collection removed: IntegerCollection [collectionId=5, collection=[1, 2, 3]]
 2025-11-18 19:01:04.103 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: DELETE
-2025-11-18 19:01:04.103 [main] INFO  com.roobie.collection.warehouse.Warehouse - Removing record of Warehouse with id: 5
+2025-11-18 19:01:04.103 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Removing record of Warehouse with id: 5
 2025-11-18 19:01:04.105 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Querying by collection: [1, 2, 3]
 2025-11-18 19:01:04.105 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 19:01:04.105 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found 1 collections
 2025-11-18 19:01:04.107 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 19:01:04.107 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
 2025-11-18 19:01:04.107 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:04.107 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {6={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 19:01:04.107 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {6={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 19:01:04.109 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Querying collection with average value LESS than 4.0
 2025-11-18 19:01:04.109 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 19:01:04.109 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found collection: IntegerCollection [collectionId=6, collection=[1, 2, 3]]
 2025-11-18 19:01:04.109 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Found 2 collections
-2025-11-18 19:01:13.742 [main] INFO  com.roobie.collection.warehouse.Warehouse - Creating new instance of Warehouse
+2025-11-18 19:01:13.742 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Creating new instance of Warehouse
 2025-11-18 19:01:13.745 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized observer
 2025-11-18 19:01:13.745 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Initialized repository
 2025-11-18 19:01:13.772 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
@@ -470,20 +470,20 @@
 2025-11-18 19:01:13.772 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 19:01:13.772 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=1, collection=[1, 2, 3]]
 2025-11-18 19:01:13.773 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
+2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {1={average=2.0, min=1.0, max=3.0, length=3.0}}
 2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=2, collection=[4, 5, 6]]
 2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
+2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {2={average=5.0, min=4.0, max=6.0, length=3.0}}
 2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Adding collection: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: CREATE
-2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.Warehouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
-2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
+2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Registered record of Warehouse: {3={average=8.0, min=7.0, max=9.0, length=3.0}}
+2025-11-18 19:01:13.775 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
 2025-11-18 19:01:13.782 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Returning an existing instance of CollectionRepositoryImpl
 2025-11-18 19:01:13.787 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Removing collection: 3
 2025-11-18 19:01:13.788 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Collection removed: IntegerCollection [collectionId=3, collection=[7, 8, 9]]
 2025-11-18 19:01:13.788 [main] INFO  com.roobie.collection.repository.impl.CollectionRepositoryImpl - Notifying action: DELETE
-2025-11-18 19:01:13.788 [main] INFO  com.roobie.collection.warehouse.Warehouse - Removing record of Warehouse with id: 3
-2025-11-18 19:01:13.789 [main] INFO  com.roobie.collection.warehouse.Warehouse - Getting storage of Warehouse
+2025-11-18 19:01:13.788 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Removing record of Warehouse with id: 3
+2025-11-18 19:01:13.789 [main] INFO  com.roobie.collection.warehouse.WarehouseImplouse - Getting storage of Warehouse
 2025-11-18 19:01:20.195 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 19:01:20.208 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
 2025-11-18 19:01:20.211 [main] INFO  com.roobie.collection.entity.IntegerCollection - IntegerCollection was initialized with 3 elements
