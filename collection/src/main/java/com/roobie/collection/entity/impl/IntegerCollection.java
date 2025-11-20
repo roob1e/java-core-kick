@@ -82,6 +82,7 @@ public class IntegerCollection extends Collection<Integer> implements Observable
 
   @Override
   public String toString() {
+    //noinspection StringBufferReplaceableByString
     StringBuilder builder = new StringBuilder();
     builder.append("IntegerCollection [collectionId=");
     builder.append(collectionId);

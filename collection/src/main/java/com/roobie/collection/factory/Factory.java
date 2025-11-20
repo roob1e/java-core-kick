@@ -2,6 +2,7 @@ package com.roobie.collection.factory;
 
 import com.roobie.collection.observer.Observer;
 
+@SuppressWarnings("unused")
 public interface Factory<T> {
   T createEmpty();
   T createRandom(int size);
