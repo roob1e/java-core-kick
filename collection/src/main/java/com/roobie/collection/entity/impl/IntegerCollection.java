@@ -3,6 +3,7 @@ package com.roobie.collection.entity.impl;
 import com.roobie.collection.entity.Collection;
 import com.roobie.collection.observer.Observable;
 import com.roobie.collection.observer.Observer;
+import com.roobie.collection.observer.impl.ObserverImpl;
 import com.roobie.collection.util.Events;
 import com.roobie.collection.util.IdGeneration;
 import org.apache.logging.log4j.LogManager;
@@ -13,38 +14,39 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class IntegerCollection extends Collection<Integer> implements Observable {
+public class IntegerCollection extends Collection<Integer> implements Observable<IntegerCollection> {
   private static final Logger logger = LogManager.getLogger();
 
-  private final long collectionId = IdGeneration.next();
-  private List<Observer> observers = new ArrayList<>();
-  private Integer[] collection;
+  private final long collectionId;
+  private List<Observer> observers;
 
   public IntegerCollection(Integer[] collection) {
     super(collection);
-    this.collection = Arrays.copyOf(collection, collection.length);
+    this.collectionId = IdGeneration.next();
     logger.info("IntegerCollection was initialized with {} elements", collection.length);
   }
 
   public IntegerCollection() {
     super();
+    this.collectionId = IdGeneration.next();
     logger.info("Empty IntegerCollection was initialized");
   }
 
   private IntegerCollection(Builder builder) {
-    this.collection = Arrays.copyOf(builder.collection, builder.collection.length);
+    super(builder.collection);
     this.observers = new ArrayList<>(builder.observers);
+    this.collectionId = IdGeneration.next();
     notifyObservers(Events.CREATE, this);
   }
 
   @Override
   public Integer[] getCollection() {
-    return Arrays.copyOf(this.collection, collection.length);
+    return super.getCollection();
   }
 
   @Override
   public void setCollection(Integer[] collection) {
-    this.collection = Arrays.copyOf(collection, collection.length);
+    super.setCollection(collection);
     notifyObservers(Events.UPDATE, this);
   }
 
@@ -53,12 +55,12 @@ public class IntegerCollection extends Collection<Integer> implements Observable
   }
 
   public List<Observer> getObservers() {
-    return observers;
+    return List.copyOf(observers);
   }
 
   @Override
   public void addObservers(Observer... observers) {
-    Collections.addAll(this.observers, observers);
+    this.observers.addAll(Arrays.asList(observers));
   }
 
   @Override
@@ -85,22 +87,29 @@ public class IntegerCollection extends Collection<Integer> implements Observable
     builder.append("IntegerCollection [collectionId=");
     builder.append(collectionId);
     builder.append(", collection=");
-    builder.append(Arrays.toString(collection));
+    builder.append(Arrays.toString(getCollection()));
     builder.append("]");
     return builder.toString();
   }
 
   @Override
   public boolean equals(Object o) {
-    if (o == null || getClass() != o.getClass()) return false;
-
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    if (!super.equals(o)) {
+      return false;
+    }
     IntegerCollection that = (IntegerCollection) o;
-    return Arrays.equals(getCollection(), that.getCollection());
+    return Arrays.equals(collection, that.collection);
   }
 
   @Override
   public int hashCode() {
-    int result = Long.hashCode(getCollectionId());
+    int result = super.hashCode();
     result = 31 * result + Arrays.hashCode(getCollection());
     return result;
   }
@@ -110,12 +119,18 @@ public class IntegerCollection extends Collection<Integer> implements Observable
     private final List<Observer> observers = new ArrayList<>();
 
     public Builder collection(Integer[] collection) {
-      this.collection = Arrays.copyOf(collection, collection.length);
-      logger.info("Collections set to: {}", Arrays.toString(collection));
+      if (collection != null) {
+        this.collection = Arrays.copyOf(collection, collection.length);
+        logger.info("Collections set to: {}", Arrays.toString(collection));
+      } else {
+        this.collection = null;
+        logger.info("Collections set to null");
+      }
       return this;
     }
 
     public Builder observers(Observer... observers) {
+      this.observers.clear();
       Collections.addAll(this.observers, observers);
       logger.info("Observers set to: {}", Arrays.toString(observers));
       return this;

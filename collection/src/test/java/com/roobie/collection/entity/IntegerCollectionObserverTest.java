@@ -21,7 +21,7 @@ class IntegerCollectionObserverTest {
   @BeforeAll
   static void setUp() {
     warehouse = WarehouseImpl.getInstance();
-    observer = new ObserverImpl();
+    observer = new ObserverImpl(warehouse);
   }
 
   @AfterEach
