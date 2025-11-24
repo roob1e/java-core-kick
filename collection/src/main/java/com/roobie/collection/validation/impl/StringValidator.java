@@ -1,7 +1,9 @@
-package com.roobie.collection.validation;
+package com.roobie.collection.validation.impl;
 
-public class StringValidator {
-  public static boolean isValid(String input) {
+import com.roobie.collection.validation.Validator;
+
+public class StringValidator implements Validator<String> {
+  public boolean isValid(String input) {
     String alpha = ".*[a-zA-Zа-яА-Я].*";
     String special = ".*[!\"#$%&'()*+./:;<=>?@\\[\\\\\\]^_`{|}~].*";
     if (input == null || input.trim().isEmpty()) {

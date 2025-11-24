@@ -2,12 +2,12 @@ package com.roobie.collection.service.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.service.IntegerCollectionService;
+import com.roobie.collection.service.BasicService;
 
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class BasicCollectionServiceImpl implements IntegerCollectionService {
+public class BasicServiceImpl implements BasicService {
   @Override
   public Integer findMinElement(IntegerCollection collection) throws IntegerCollectionException {
     if (collection.getCollection() == null || Arrays.equals(collection.getCollection(), new Integer[0])) {

@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SortCollectionServiceImplTest {
+class SortServiceImplTest {
   IntegerCollection collection;
-  SortCollectionServiceImpl impl = new SortCollectionServiceImpl();
+  SortServiceImpl impl = new SortServiceImpl();
 
   @BeforeEach
   void setUp() {

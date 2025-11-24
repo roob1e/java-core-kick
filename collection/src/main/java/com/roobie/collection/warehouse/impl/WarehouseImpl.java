@@ -3,7 +3,7 @@ package com.roobie.collection.warehouse.impl;
 import com.roobie.collection.entity.CollectionStats;
 import com.roobie.collection.entity.impl.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.service.impl.BasicCollectionServiceImpl;
+import com.roobie.collection.service.impl.BasicServiceImpl;
 import com.roobie.collection.warehouse.Warehouse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,7 +41,7 @@ public class WarehouseImpl implements Warehouse {
   @Override
   public CollectionStats getStats(long collectionId) {
     if (storage.containsKey(collectionId)) {
-      logger.info("Got record of Warehouse: {}", storage.get(collectionId));
+      logger.info("Got stats of Warehouse with id {}: {}", collectionId ,storage.get(collectionId));
       return storage.get(collectionId);
     }
     return new CollectionStats(0, 0, 0, 0);
@@ -66,6 +66,12 @@ public class WarehouseImpl implements Warehouse {
   }
 
   @Override
+  public void removeRecord(long collectionId) {
+    logger.info("Removing record of Warehouse with id: {}", collectionId);
+    storage.remove(collectionId);
+  }
+
+  @Override
   public void updateRecord(IntegerCollection collection) {
     long collectionId = collection.getCollectionId();
     CollectionStats metrics = calculateMetrics(collection);
@@ -74,7 +80,7 @@ public class WarehouseImpl implements Warehouse {
   }
 
   private CollectionStats calculateMetrics(IntegerCollection collection) {
-    BasicCollectionServiceImpl impl = new BasicCollectionServiceImpl();
+    BasicServiceImpl impl = new BasicServiceImpl();
     try {
       double average = impl.defineAverageValue(collection);
       int min = impl.findMinElement(collection);

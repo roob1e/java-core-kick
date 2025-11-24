@@ -35,7 +35,9 @@ public class IntegerCollection extends Collection<Integer> implements Observable
     super(builder.collection);
     this.observers = new ArrayList<>(builder.observers);
     this.collectionId = IdGeneration.next();
-    notifyObservers(Events.CREATE, this);
+    if (observers != null) {
+      notifyObservers(Events.UPDATE, this);
+    }
   }
 
   @Override
@@ -46,7 +48,9 @@ public class IntegerCollection extends Collection<Integer> implements Observable
   @Override
   public void setCollection(Integer[] collection) {
     super.setCollection(collection);
-    notifyObservers(Events.UPDATE, this);
+    if (observers != null) {
+      notifyObservers(Events.UPDATE, this);
+    }
   }
 
   public long getCollectionId() {

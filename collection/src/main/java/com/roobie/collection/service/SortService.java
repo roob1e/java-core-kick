@@ -2,7 +2,7 @@ package com.roobie.collection.service;
 
 import com.roobie.collection.exception.IntegerCollectionException;
 
-public interface SortCollectionService {
+public interface SortService {
   Integer[] bubbleSort(Integer[] array) throws IntegerCollectionException;
 
   Integer[] selectionSort(Integer[] array) throws IntegerCollectionException;

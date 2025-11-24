@@ -1,9 +1,9 @@
 package com.roobie.collection.service.impl;
 
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.service.SortCollectionService;
+import com.roobie.collection.service.SortService;
 
-public class SortCollectionServiceImpl implements SortCollectionService {
+public class SortServiceImpl implements SortService {
   @Override
   public Integer[] bubbleSort(Integer[] array) throws IntegerCollectionException {
     if (array == null || array.length < 2) {

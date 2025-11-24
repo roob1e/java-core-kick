@@ -28,7 +28,7 @@ public class IntegerCollectionFactory implements Factory<IntegerCollection> {
   public IntegerCollection createRandom(int size) {
     Integer[] array = new Integer[size];
     for (int i = 0; i < size; i++) {
-      array[i] = RANDOM.nextInt(-10, 10);
+      array[i] = RANDOM.nextInt(10) - 11;
     }
     return createFromArray(array);
   }

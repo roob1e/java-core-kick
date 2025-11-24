@@ -1,8 +1,10 @@
-package com.roobie.collection.reader;
+package com.roobie.collection.reader.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
-import com.roobie.collection.reader.impl.CollectionReaderImpl;
+import com.roobie.collection.reader.CollectionReader;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -13,7 +15,20 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CollectionReaderTest {
-  Path path = Paths.get("data/data.txt");
+  Path path;
+  CollectionReaderImpl reader;
+
+  @BeforeEach
+  void setUp() {
+    path = Paths.get("data/data.txt");
+    reader = new CollectionReaderImpl();
+  }
+
+  @AfterEach
+  void tearDown() {
+    path = null;
+    reader = null;
+  }
 
   @Test
   void parseAllLines() throws IntegerCollectionException {
@@ -22,7 +37,7 @@ class CollectionReaderTest {
     expected.add(new IntegerCollection(new Integer[]{4, 3, 2, 1}).getCollection());
     expected.add(new IntegerCollection(new Integer[]{8, 1, 4, 6, 8}).getCollection());
 
-    List<IntegerCollection> parsed = new CollectionReaderImpl().parseAllLines(path);
+    List<IntegerCollection> parsed = reader.parseAllLines(path);
     List<Integer[]> actual = new ArrayList<>();
     for (IntegerCollection collection : parsed) {
       actual.add(collection.getCollection());
@@ -35,7 +50,7 @@ class CollectionReaderTest {
   void parseLine() throws IntegerCollectionException {
     Integer[] expected = new Integer[]{1, 2, 3, 4};
 
-    IntegerCollection parsed = new CollectionReaderImpl().parseLine(path, 0);
+    IntegerCollection parsed = reader.parseLine(path, 0);
     Integer[] actual = parsed.getCollection();
 
     assertArrayEquals(expected, actual);

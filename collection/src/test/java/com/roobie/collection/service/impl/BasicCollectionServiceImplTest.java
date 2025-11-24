@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BasicCollectionServiceImplTest {
   IntegerCollection collection;
-  BasicCollectionServiceImpl impl = new BasicCollectionServiceImpl();
+  BasicServiceImpl impl = new BasicServiceImpl();
 
   @BeforeEach
   void setUp() {

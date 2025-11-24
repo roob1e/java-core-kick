@@ -3,7 +3,8 @@ package com.roobie.collection.reader.impl;
 import com.roobie.collection.entity.impl.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.reader.CollectionReader;
-import com.roobie.collection.validation.StringValidator;
+import com.roobie.collection.validation.Validator;
+import com.roobie.collection.validation.impl.StringValidator;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -15,15 +16,16 @@ import java.util.List;
 
 public class CollectionReaderImpl implements CollectionReader {
   private static final Logger logger = LogManager.getLogger();
-  private static final String delimiters = "[, \\-\\s]+";
+  static final String delimiters = "[, \\-\\s]+";
 
   @Override
   public List<IntegerCollection> parseAllLines(Path filePath) throws IntegerCollectionException {
     List<IntegerCollection> data = new ArrayList<>();
+    Validator<String> validator = new StringValidator();
     try {
       List<String> lines = Files.readAllLines(filePath);
       for (String line : lines) {
-        if (StringValidator.isValid(line)) {
+        if (validator.isValid(line)) {
           String[] parts = line.split(delimiters);
           Integer[] arr = new Integer[parts.length];
           for (int i = 0; i < parts.length; i++) {

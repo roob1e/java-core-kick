@@ -5,7 +5,7 @@ import com.roobie.collection.exception.IntegerCollectionException;
 
 import java.util.HashMap;
 
-public interface IntegerCollectionService {
+public interface BasicService {
   Integer findMinElement(IntegerCollection collection) throws IntegerCollectionException;
 
   Integer findMaxElement(IntegerCollection collection) throws IntegerCollectionException;

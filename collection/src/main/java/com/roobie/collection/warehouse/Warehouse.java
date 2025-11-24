@@ -16,5 +16,7 @@ public interface Warehouse {
 
   void removeRecord(IntegerCollection collection);
 
+  void removeRecord(long collectionId);
+
   void updateRecord(IntegerCollection collection);
 }
