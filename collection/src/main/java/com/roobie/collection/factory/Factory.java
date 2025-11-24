@@ -2,11 +2,10 @@ package com.roobie.collection.factory;
 
 import com.roobie.collection.observer.Observer;
 
-@SuppressWarnings("unused")
-public interface Factory<T> {
+public interface Factory<T, U> {
   T createEmpty();
   T createRandom(int size);
-  T createFromArray(Integer[] array);
-  T createFull(Integer[] array, Observer[] observers);
-  T createFullRandom(int size, Observer[] observers);
+  T createFromArray(U[] array);
+  T createFull(U[] array, Observer... observers);
+  T createFullRandom(int size, Observer... observers);
 }

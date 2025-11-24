@@ -10,9 +10,9 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BasicCollectionServiceImplTest {
+class StreamBasicServiceImplTest {
   IntegerCollection collection;
-  BasicServiceImpl impl = new BasicServiceImpl();
+  StreamBasicServiceImpl impl = new StreamBasicServiceImpl();
 
   @BeforeEach
   void setUp() {

@@ -7,10 +7,19 @@ import com.roobie.collection.observer.Observer;
 import java.util.Arrays;
 import java.util.Random;
 
-public class IntegerCollectionFactory implements Factory<IntegerCollection> {
-  private static final Random RANDOM = new Random();
+public class IntegerCollectionFactory implements Factory<IntegerCollection, Integer> {
+  private static final Random random = new Random();
+  private int randomBound = 10;
 
   public IntegerCollectionFactory() {}
+
+  public int getRandomBound() {
+    return randomBound;
+  }
+
+  public void setRandomBound(int randomBound) {
+    this.randomBound = randomBound;
+  }
 
   @Override
   public IntegerCollection createEmpty() {
@@ -28,13 +37,13 @@ public class IntegerCollectionFactory implements Factory<IntegerCollection> {
   public IntegerCollection createRandom(int size) {
     Integer[] array = new Integer[size];
     for (int i = 0; i < size; i++) {
-      array[i] = RANDOM.nextInt(10) - 11;
+      array[i] = random.nextInt(10) - 11;
     }
     return createFromArray(array);
   }
 
   @Override
-  public IntegerCollection createFull(Integer[] array, Observer[] observers) {
+  public IntegerCollection createFull(Integer[] array, Observer... observers) {
     return new IntegerCollection().builder()
             .collection(Arrays.copyOf(array, array.length))
             .observers(observers)
@@ -42,10 +51,10 @@ public class IntegerCollectionFactory implements Factory<IntegerCollection> {
   }
 
   @Override
-  public IntegerCollection createFullRandom(int size, Observer[] observers) {
+  public IntegerCollection createFullRandom(int size, Observer... observers) {
     Integer[] array = new Integer[size];
     for (int i = 0; i < size; i++) {
-      array[i] = RANDOM.nextInt(-10, 10);
+      array[i] = random.nextInt(10) - 10;
     }
     return createFull(array, observers);
   }

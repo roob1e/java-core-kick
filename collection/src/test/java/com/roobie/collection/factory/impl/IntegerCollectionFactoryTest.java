@@ -1,12 +1,11 @@
 package com.roobie.collection.factory.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
+import com.roobie.collection.factory.Factory;
 import com.roobie.collection.observer.Observer;
 import com.roobie.collection.observer.impl.ObserverImpl;
 import com.roobie.collection.warehouse.impl.WarehouseImpl;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -14,7 +13,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IntegerCollectionFactoryTest {
-  static IntegerCollectionFactory factory;
+  static Factory<IntegerCollection, Integer> factory;
 
   @BeforeAll
   static void setUp() {

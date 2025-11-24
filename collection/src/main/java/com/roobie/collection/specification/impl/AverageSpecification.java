@@ -7,14 +7,13 @@ import com.roobie.collection.specification.Specification;
 import com.roobie.collection.util.Sign;
 
 public record AverageSpecification(double average, Sign sign) implements Specification {
-
   @Override
   public boolean specify(IntegerCollection collection) throws IntegerCollectionException {
     double average = new BasicServiceImpl().defineAverageValue(collection);
-    if (sign == Sign.MORE) {
-      return average > this.average;
-    } else {
-      return average < this.average;
-    }
+    return switch (sign) {
+      case EQUAL -> average == this.average;
+      case MORE -> average > this.average;
+      case LESS -> average < this.average;
+    };
   }
 }

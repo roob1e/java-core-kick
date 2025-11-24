@@ -16,12 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IntegerCollectionObserverTest {
   static Warehouse warehouse;
-  static Observer observer;
+  static Observer[] observers;
 
   @BeforeAll
   static void setUp() {
     warehouse = WarehouseImpl.getInstance();
-    observer = new ObserverImpl(warehouse);
+    observers = new Observer[] {new ObserverImpl(warehouse)};
   }
 
   @AfterEach
@@ -35,7 +35,7 @@ class IntegerCollectionObserverTest {
     //noinspection unused
     IntegerCollection collection = new IntegerCollection().builder()
             .collection(new Integer[]{1, 2, 3, 4})
-            .observers(observer)
+            .observers(observers)
             .build();
     int actual = warehouse.getStorage().size();
 
@@ -45,12 +45,12 @@ class IntegerCollectionObserverTest {
   @Test
   void removeObserver() {
     List<Observer> expected = new ArrayList<>();
-
     IntegerCollection collection = new IntegerCollection().builder()
             .collection(new Integer[]{1, 2, 3, 4})
-            .observers(observer)
+            .observers(observers)
             .build();
-    collection.removeObservers(observer);
+
+    collection.removeObservers(observers);
     List<Observer> actual = collection.getObservers();
 
     assertEquals(expected, actual);

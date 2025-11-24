@@ -41,11 +41,6 @@ public class IntegerCollection extends Collection<Integer> implements Observable
   }
 
   @Override
-  public Integer[] getCollection() {
-    return super.getCollection();
-  }
-
-  @Override
   public void setCollection(Integer[] collection) {
     super.setCollection(collection);
     if (observers != null) {
@@ -62,12 +57,13 @@ public class IntegerCollection extends Collection<Integer> implements Observable
   }
 
   @Override
-  public void addObservers(Observer... observers) {
+  public final void addObservers(Observer[] observers) {
     this.observers.addAll(Arrays.asList(observers));
+    notifyObservers(Events.CREATE, this);
   }
 
   @Override
-  public void removeObservers(Observer... observers) {
+  public final void removeObservers(Observer[] observers) {
     for (Observer observer : observers) {
       this.observers.remove(observer);
     }
@@ -133,7 +129,7 @@ public class IntegerCollection extends Collection<Integer> implements Observable
       return this;
     }
 
-    public Builder observers(Observer... observers) {
+    public final Builder observers(Observer[] observers) {
       this.observers.clear();
       Collections.addAll(this.observers, observers);
       logger.info("Observers set to: {}", Arrays.toString(observers));

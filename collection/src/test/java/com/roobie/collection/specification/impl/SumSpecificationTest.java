@@ -2,6 +2,7 @@ package com.roobie.collection.specification.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
+import com.roobie.collection.specification.Specification;
 import com.roobie.collection.util.Sign;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,12 +10,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AverageSpecificationTest {
-  AverageSpecification specification;
+class SumSpecificationTest {
+  Specification specification;
 
   @BeforeEach
   void setUp() {
-    specification = new AverageSpecification(3.1D, Sign.LESS);
+    specification = new SumSpecification(6, Sign.LESS);
   }
 
   @AfterEach
@@ -24,6 +25,8 @@ public class AverageSpecificationTest {
 
   @Test
   void specify1() throws IntegerCollectionException {
+    specification = new SumSpecification(6, Sign.EQUAL);
+
     boolean expected = true;
 
     IntegerCollection collection = new IntegerCollection(new Integer[]{1, 2, 3});
@@ -34,9 +37,9 @@ public class AverageSpecificationTest {
 
   @Test
   void specify2() throws IntegerCollectionException {
-    boolean expected = false;
+    boolean expected = true;
 
-    IntegerCollection collection = new IntegerCollection(new Integer[]{4, 5, 6});
+    IntegerCollection collection = new IntegerCollection(new Integer[]{0, 1, 2});
     boolean actual = specification.specify(collection);
 
     assertEquals(expected, actual);
@@ -44,10 +47,9 @@ public class AverageSpecificationTest {
 
   @Test
   void specify3() throws IntegerCollectionException {
-    specification = new AverageSpecification(2.0, Sign.EQUAL);
-    boolean expected = true;
+    boolean expected = false;
 
-    IntegerCollection collection = new IntegerCollection(new Integer[]{1, 2, 3});
+    IntegerCollection collection = new IntegerCollection(new Integer[]{2, 3, 4});
     boolean actual = specification.specify(collection);
 
     assertEquals(expected, actual);

@@ -4,7 +4,7 @@ import com.roobie.collection.exception.IntegerCollectionException;
 
 import java.util.Arrays;
 
-public abstract class Collection<T> {
+public class Collection<T> {
   protected T[] collection;
 
   public Collection(T[] collection) {
@@ -31,7 +31,7 @@ public abstract class Collection<T> {
 
   public T get(int index) throws IntegerCollectionException {
     if (collection == null || index < 0 || index >= collection.length ) {
-      throw  new IntegerCollectionException("Index out of bounds");
+      throw new IntegerCollectionException("Index out of bounds");
     }
     return collection[index];
   }
@@ -42,7 +42,9 @@ public abstract class Collection<T> {
 
   @Override
   public boolean equals(Object o) {
-    if (o == null || getClass() != o.getClass()) return false;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     Collection<?> that = (Collection<?>) o;
     return Arrays.equals(getCollection(), that.getCollection());
