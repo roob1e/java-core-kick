@@ -6,10 +6,10 @@ import com.roobie.collection.validation.impl.StringValidator;
 
 public class IntegerCollectionParser implements CollectionParser<Integer> {
   private static final String delimiters = "[, \\-\\s]+";
+  private final Validator<String> validator = new StringValidator();
 
   @Override
   public Integer[] parse(String input) {
-    Validator<String> validator = new StringValidator();
     if (validator.isValid(input)) {
       String[] parts = input.split(delimiters);
       Integer[] arr = new Integer[parts.length];

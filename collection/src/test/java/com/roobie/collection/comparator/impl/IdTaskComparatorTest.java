@@ -24,7 +24,6 @@ class IdTaskComparatorTest {
     collection22 = new IntegerCollection(new Integer[]{1, 2, 3});
   }
 
-
   @Test
   void compare1() {
     int expected = -1;

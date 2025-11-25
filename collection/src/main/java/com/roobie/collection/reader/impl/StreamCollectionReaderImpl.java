@@ -2,6 +2,7 @@ package com.roobie.collection.reader.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
 import com.roobie.collection.exception.IntegerCollectionException;
+import com.roobie.collection.parser.impl.StreamCollectionParser;
 import com.roobie.collection.reader.CollectionReader;
 import com.roobie.collection.validation.Validator;
 import com.roobie.collection.validation.impl.StringValidator;
@@ -11,13 +12,13 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class StreamCollectionReaderImpl implements CollectionReader<IntegerCollection> {
   private static final String delimiters = "[, \\-\\s]+";
-  Logger logger = LogManager.getLogger();
+  private static final Logger logger = LogManager.getLogger();
+  private final StreamCollectionParser parser = new StreamCollectionParser();
 
   @Override
   public List<IntegerCollection> readAllLines(Path filePath) throws IntegerCollectionException {
@@ -30,7 +31,8 @@ public class StreamCollectionReaderImpl implements CollectionReader<IntegerColle
       logger.info("Parsing file: {}", filePath.toAbsolutePath());
        return stream
                .filter(validator::isValid)
-               .map(this::parseIntegerCollection)
+               .map(StreamCollectionParser::parse)
+               .map(IntegerCollection::new)
                .toList();
     } catch (IOException e) {
       logger.error("Error parsing file: {}, {}", filePath.toAbsolutePath(), e.getMessage());
@@ -51,23 +53,13 @@ public class StreamCollectionReaderImpl implements CollectionReader<IntegerColle
               .skip(line)
               .findFirst()
               .filter(validator::isValid)
-              .map(this::parseIntegerCollection)
+              .map(StreamCollectionParser::parse)
+              .map(IntegerCollection::new)
               .orElseThrow(() ->
                       new IntegerCollectionException("File not found or invalid line: " + filePath.toAbsolutePath()));
     } catch (IOException e) {
       logger.error("Error parsing file: {}, {}", filePath.toAbsolutePath(), e.getMessage());
       throw new IntegerCollectionException("File not found");
     }
-  }
-
-  private IntegerCollection parseIntegerCollection(String line) {
-    Integer[] array = Arrays.stream(line.split(delimiters))
-            .map(String::trim)
-            .map(Integer::parseInt)
-            .toArray(Integer[]::new);
-    logger.info("Parsed a line to collection: {}", Arrays.toString(array));
-    return new IntegerCollection().builder()
-            .collection(array)
-            .build();
   }
 }
