@@ -6,7 +6,7 @@ import com.roobie.collection.service.impl.BasicServiceImpl;
 import com.roobie.collection.specification.Specification;
 import com.roobie.collection.util.Sign;
 
-public record SumSpecification(int sum, Sign sign) implements Specification {
+public record SumSpecification(int sum, Sign sign) implements Specification<IntegerCollection> {
   @Override
   public boolean specify(IntegerCollection collection) {
     try {

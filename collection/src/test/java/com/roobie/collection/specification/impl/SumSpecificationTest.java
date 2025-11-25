@@ -1,7 +1,6 @@
 package com.roobie.collection.specification.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
-import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.specification.Specification;
 import com.roobie.collection.util.Sign;
 import org.junit.jupiter.api.AfterEach;
@@ -11,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SumSpecificationTest {
-  Specification specification;
+  Specification<IntegerCollection> specification;
 
   @BeforeEach
   void setUp() {
@@ -24,7 +23,7 @@ class SumSpecificationTest {
   }
 
   @Test
-  void specify1() throws IntegerCollectionException {
+  void specify1() {
     specification = new SumSpecification(6, Sign.EQUAL);
 
     boolean expected = true;
@@ -36,7 +35,7 @@ class SumSpecificationTest {
   }
 
   @Test
-  void specify2() throws IntegerCollectionException {
+  void specify2() {
     boolean expected = true;
 
     IntegerCollection collection = new IntegerCollection(new Integer[]{0, 1, 2});
@@ -46,7 +45,7 @@ class SumSpecificationTest {
   }
 
   @Test
-  void specify3() throws IntegerCollectionException {
+  void specify3() {
     boolean expected = false;
 
     IntegerCollection collection = new IntegerCollection(new Integer[]{2, 3, 4});

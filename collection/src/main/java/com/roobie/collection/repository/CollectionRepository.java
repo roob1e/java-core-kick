@@ -1,20 +1,18 @@
 package com.roobie.collection.repository;
 
-import com.roobie.collection.entity.impl.IntegerCollection;
-import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.specification.Specification;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface CollectionRepository {
-  Optional<List<IntegerCollection>> query(Specification specification) throws IntegerCollectionException;
+public interface CollectionRepository<T> {
+  Optional<List<T>> query(Specification<T> specification);
 
-  List<IntegerCollection> add(IntegerCollection... collection) throws IntegerCollectionException;
+  List<T> add(T[] collections) throws Throwable;
 
-  boolean remove(long id) throws IntegerCollectionException;
+  boolean remove(long id) throws Throwable;
 
-  List<IntegerCollection> fetchAll();
+  List<T> fetchAll();
 
-  List<IntegerCollection> sort();
+  List<T> sort();
 }

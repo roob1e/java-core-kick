@@ -35,7 +35,7 @@ public class IntegerCollection extends Collection<Integer> implements Observable
     super(builder.collection);
     this.observers = new ArrayList<>(builder.observers);
     this.collectionId = IdGeneration.next();
-    if (observers != null) {
+    if (this.observers != null) {
       notifyObservers(Events.UPDATE, this);
     }
   }
@@ -43,27 +43,27 @@ public class IntegerCollection extends Collection<Integer> implements Observable
   @Override
   public void setCollection(Integer[] collection) {
     super.setCollection(collection);
-    if (observers != null) {
+    if (this.observers != null) {
       notifyObservers(Events.UPDATE, this);
     }
   }
 
   public long getCollectionId() {
-    return collectionId;
+    return this.collectionId;
   }
 
   public List<Observer> getObservers() {
-    return List.copyOf(observers);
+    return List.copyOf(this.observers);
   }
 
   @Override
-  public final void addObservers(Observer[] observers) {
+  public final void addObservers(Observer... observers) {
     this.observers.addAll(Arrays.asList(observers));
     notifyObservers(Events.CREATE, this);
   }
 
   @Override
-  public final void removeObservers(Observer[] observers) {
+  public final void removeObservers(Observer... observers) {
     for (Observer observer : observers) {
       this.observers.remove(observer);
     }
@@ -71,7 +71,7 @@ public class IntegerCollection extends Collection<Integer> implements Observable
 
   @Override
   public void notifyObservers(Events action, IntegerCollection collection) {
-    for (Observer observer : observers) {
+    for (Observer observer : this.observers) {
       observer.update(action, collection);
     }
   }
@@ -129,7 +129,7 @@ public class IntegerCollection extends Collection<Integer> implements Observable
       return this;
     }
 
-    public final Builder observers(Observer[] observers) {
+    public final Builder observers(Observer... observers) {
       this.observers.clear();
       Collections.addAll(this.observers, observers);
       logger.info("Observers set to: {}", Arrays.toString(observers));

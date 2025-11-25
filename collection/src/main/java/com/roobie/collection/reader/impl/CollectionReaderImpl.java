@@ -14,29 +14,22 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionReaderImpl implements CollectionReader {
+public class CollectionReaderImpl implements CollectionReader<IntegerCollection> {
   private static final Logger logger = LogManager.getLogger();
   static final String delimiters = "[, \\-\\s]+";
 
   @Override
   public List<IntegerCollection> parseAllLines(Path filePath) throws IntegerCollectionException {
+    if (!Files.exists(filePath)) {
+      logger.warn("File does not exist: {}", filePath);
+      throw new IntegerCollectionException("Invalid path: " + filePath);
+    }
     List<IntegerCollection> data = new ArrayList<>();
-    Validator<String> validator = new StringValidator();
     try {
       List<String> lines = Files.readAllLines(filePath);
       for (String line : lines) {
-        if (validator.isValid(line)) {
-          String[] parts = line.split(delimiters);
-          Integer[] arr = new Integer[parts.length];
-          for (int i = 0; i < parts.length; i++) {
-            String temp = parts[i].trim();
-            arr[i] = Integer.parseInt(temp);
-          }
-          var collection = new IntegerCollection().builder()
-                  .collection(arr)
-                  .build();
-          data.add(collection);
-          logger.info("Collection read: {}", collection);
+        if (parseIntArray(line) != null) {
+          data.add(new IntegerCollection(parseIntArray(line)));
         }
       }
     } catch (IOException e) {
@@ -48,15 +41,36 @@ public class CollectionReaderImpl implements CollectionReader {
 
   @Override
   public IntegerCollection parseLine(Path filePath, int index) throws IntegerCollectionException {
-    List<IntegerCollection> data = parseAllLines(filePath);
-    IntegerCollection result;
+    if (!Files.exists(filePath)) {
+      logger.warn("File does not exist: {}", filePath);
+      throw new IntegerCollectionException("Invalid path: " + filePath);
+    }
     try {
-      result = data.get(index);
-      logger.info("Collection read: {}", result);
-    } catch (IndexOutOfBoundsException e) {
-      logger.error("Index out of bounds: {}\n{}", index, e.getMessage());
+      List<String> lines = Files.readAllLines(filePath);
+      String result = lines.get(index);
+      Integer[] arr = parseIntArray(result);
+      var collection = new IntegerCollection().builder()
+              .collection(arr)
+              .build();
+      logger.info("Collection read: {}", collection);
+      return collection;
+    } catch (IOException e) {
+      logger.error(e.getMessage());
       throw new IntegerCollectionException(e.getMessage(), e);
     }
-    return result;
+  }
+
+  private Integer[] parseIntArray(String input) {
+    Validator<String> validator = new StringValidator();
+    if (validator.isValid(input)) {
+      String[] parts = input.split(delimiters);
+      Integer[] arr = new Integer[parts.length];
+      for (int i = 0; i < parts.length; i++) {
+        arr[i] = Integer.parseInt(parts[i]);
+      }
+      return arr;
+    } else {
+      return null;
+    }
   }
 }

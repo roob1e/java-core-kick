@@ -17,21 +17,20 @@ import java.util.stream.Stream;
 
 import static com.roobie.collection.reader.impl.CollectionReaderImpl.delimiters;
 
-public class StreamCollectionReaderImpl implements CollectionReader {
+public class StreamCollectionReaderImpl implements CollectionReader<IntegerCollection> {
   Logger logger = LogManager.getLogger();
 
-  public List<IntegerCollection> parseAllLines(Path filePath)
-          throws IntegerCollectionException {
+  public List<IntegerCollection> parseAllLines(Path filePath) throws IntegerCollectionException {
     Validator<String> validator = new StringValidator();
     if (!Files.exists(filePath)) {
-      logger.warn("File does not exist: " + filePath);
+      logger.warn("File does not exist: {}", filePath);
       throw new IntegerCollectionException("Invalid path: " + filePath);
     }
     try (Stream<String> stream = Files.lines(filePath)) {
       logger.info("Parsing file: {}", filePath.toAbsolutePath());
        return stream
                .filter(validator::isValid)
-               .map(this::parseLineToIntegerCollection)
+               .map(this::parseIntegerCollection)
                .toList();
     } catch (IOException e) {
       logger.error("Error parsing file: {}, {}", filePath.toAbsolutePath(), e.getMessage());
@@ -43,7 +42,7 @@ public class StreamCollectionReaderImpl implements CollectionReader {
   public IntegerCollection parseLine(Path filePath, int line) throws IntegerCollectionException {
     Validator<String> validator = new StringValidator();
     if (!Files.exists(filePath)) {
-      logger.warn("File does not exist: " + filePath.toString());
+      logger.warn("File does not exist: {}", filePath);
       throw new IntegerCollectionException("Invalid path: " + filePath);
     }
     try (Stream<String> lines = Files.lines(filePath)) {
@@ -52,7 +51,7 @@ public class StreamCollectionReaderImpl implements CollectionReader {
               .skip(line)
               .findFirst()
               .filter(validator::isValid)
-              .map(this::parseLineToIntegerCollection)
+              .map(this::parseIntegerCollection)
               .orElseThrow(() ->
                       new IntegerCollectionException("File not found or invalid line: " + filePath.toAbsolutePath()));
     } catch (IOException e) {
@@ -61,7 +60,7 @@ public class StreamCollectionReaderImpl implements CollectionReader {
     }
   }
 
-  private IntegerCollection parseLineToIntegerCollection(String line) {
+  private IntegerCollection parseIntegerCollection(String line) {
     Integer[] array = Arrays.stream(line.split(delimiters))
             .map(String::trim)
             .map(Integer::parseInt)

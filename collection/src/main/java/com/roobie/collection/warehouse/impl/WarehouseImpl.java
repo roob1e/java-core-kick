@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class WarehouseImpl implements Warehouse {
   private static final Logger logger = LogManager.getLogger();
   private static WarehouseImpl instance;
-  private HashMap<Long, CollectionStats> storage;
+  private final HashMap<Long, CollectionStats> storage;
 
   private WarehouseImpl() {
     storage = new HashMap<>();

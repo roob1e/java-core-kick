@@ -1,7 +1,6 @@
 package com.roobie.collection.repository.impl;
 
 import com.roobie.collection.entity.impl.IntegerCollection;
-import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.specification.Specification;
 import com.roobie.collection.specification.impl.AverageSpecification;
 import com.roobie.collection.specification.impl.CollectionSpecification;
@@ -35,7 +34,7 @@ class CollectionRepositoryImplTest {
 
   @Test
   @Order(1)
-  void queryById() throws IntegerCollectionException {
+  void queryById() {
     Integer[] expected = new Integer[]{1, 2, 3};
     idSpecification = new IdSpecification(1);
 
@@ -51,7 +50,7 @@ class CollectionRepositoryImplTest {
 
   @Test
   @Order(2)
-  void queryByCollection() throws IntegerCollectionException {
+  void queryByCollection() {
     Integer[] expected = new Integer[]{1, 2, 3};
     collectionSpecification = new CollectionSpecification(new Integer[]{1, 2, 3});
 
@@ -67,13 +66,13 @@ class CollectionRepositoryImplTest {
 
   @Test
   @Order(3)
-  void queryByAverage() throws IntegerCollectionException {
+  void queryByAverage() {
     Integer[] expected = new Integer[]{1, 2, 3};
 
     double averageValue = 3.1;
-    Specification specification = new AverageSpecification(averageValue, Sign.LESS);
+    Specification<IntegerCollection> specification = new AverageSpecification(averageValue, Sign.LESS);
 
-    List<IntegerCollection> result = repository.query(specification).get();
+    List<IntegerCollection> result = repository.query(specification).orElse(fail());
     Integer[] actual = result.getFirst().getCollection();
     assertArrayEquals(expected, actual);
   }

@@ -14,7 +14,7 @@ class IntegerCollectionExceptionTest {
   BasicServiceImpl impl = new BasicServiceImpl();
 
   @BeforeEach
-  void setUp() throws IntegerCollectionException {
+  void setUp() {
     collection = new IntegerCollectionFactory().createEmpty();
   }
 
@@ -25,41 +25,31 @@ class IntegerCollectionExceptionTest {
 
   @Test
   void findMinElement() {
-    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
-      impl.findMinElement(collection);
-    });
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> impl.findMinElement(collection));
     assertEquals("Collection is null", exception.getMessage());
   }
 
   @Test
   void findMaxElement() {
-    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
-      impl.findMaxElement(collection);
-    });
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> impl.findMaxElement(collection));
     assertEquals("Collection is null", exception.getMessage());
   }
 
   @Test
   void defineAverageValue() {
-    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
-      impl.defineAverageValue(collection);
-    });
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> impl.defineAverageValue(collection));
     assertEquals("Collection is null", exception.getMessage());
   }
 
   @Test
   void defineSum() {
-    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
-      impl.defineSum(collection);
-    });
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> impl.defineSum(collection));
     assertEquals("Collection is null", exception.getMessage());
   }
 
   @Test
   void countPositivesAndNegatives() {
-    Exception exception = assertThrows(IntegerCollectionException.class, () -> {
-      impl.countPositivesAndNegatives(collection);
-    });
+    Exception exception = assertThrows(IntegerCollectionException.class, () -> impl.countPositivesAndNegatives(collection));
     assertEquals("Collection is null", exception.getMessage());
   }
 }

@@ -2,7 +2,6 @@ package com.roobie.collection.repository.impl;
 
 import com.roobie.collection.comparator.impl.CollectionComparator;
 import com.roobie.collection.entity.impl.IntegerCollection;
-import com.roobie.collection.exception.IntegerCollectionException;
 import com.roobie.collection.repository.CollectionRepository;
 import com.roobie.collection.specification.Specification;
 import com.roobie.collection.specification.impl.IdSpecification;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class CollectionRepositoryImpl implements CollectionRepository {
+public class CollectionRepositoryImpl implements CollectionRepository<IntegerCollection> {
   private static final Logger logger = LogManager.getLogger();
   private static CollectionRepositoryImpl instance;
   private List<IntegerCollection> storage;
@@ -34,13 +33,13 @@ public class CollectionRepositoryImpl implements CollectionRepository {
   }
 
   @Override
-  public Optional<List<IntegerCollection>> query(Specification specification) throws IntegerCollectionException {
+  public Optional<List<IntegerCollection>> query(Specification<IntegerCollection> specification) {
     logger.info("Querying specification: {}", specification);
     List<IntegerCollection> response = new ArrayList<>();
     for (IntegerCollection collection : storage) {
       if (specification.specify(collection)) {
         response.add(collection);
-        if(specification instanceof IdSpecification) {
+        if (specification instanceof IdSpecification) {
           break;
         }
       }
